@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Order shares online</title>
+  <link rel="stylesheet" href="app.css" type="text/css" />
+
+</head>
+<body>
+  <h1>Order shares online</h1>
+
+  <div id="container">
+    <div id="form">
+      <form id="buy_orders">
+        <fieldset>
+          <legend>Order Details</legend>
+          <input type="hidden" name="index" id="index" />
+          <p>
+            <label for="ticker_name">Ticker</label>
+            <select id="ticker_name" name="ticker_name" required autofocus>
+              <option></option>
+              <option value="msft">Microsoft</option>
+              <option value="ibm">Ibm</option>
+              <option value="c">Citibank</option>
+              <option value="ybook">Yieldbook</option>
+            </select>
+          </p>
+          <p>
+            <label for="order_quantity">Quantity</label>
+            <input type="number" min="1" name="order_quantity" id="order_quantity" required />
+          </p>
+
+          <p>
+            <label>Price per share</label>
+            <span id="price">(enter data first)</span>
+          </p>
+
+          <p>
+            <label>Order Amount</label>
+            <span id="total_price">(enter data first)</span>
+          </p>
+          <div id="submit_wrapper">
+            <input type="submit" id="submit" value="Place Order" />
+          </div>
+        </fieldset>
+      </form>
+
+    </div>
+
+    <fieldset id="orders_bought">
+      <legend>Orders posted</legend>
+
+      <table>
+        <thead>
+          <tr>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+            <th>
+              name
+            </th>
+            <th>
+              price
+            </th>
+            <th>
+              qty
+            </th>
+            <th>
+              amount
+            </th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Sum</td>
+            <td id="total"></td>
+          </tr>
+        </tfoot>
+        <tbody id="orders_list"></tbody>
+      </table>
+    </fieldset>
+
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="./release/model.js"></script>
+  <script src="./release/controller.js"></script>
+  <script src="./ticker.js"></script>
+</body>
+</html>
